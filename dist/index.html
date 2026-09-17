@@ -14,16 +14,32 @@
   <a class="skip" href="#work">Skip to projects</a>
   <header class="header wrap">
     <a class="brand" href="#" aria-label="UMango Games home"><span class="brand-mark">u<span>m</span></span><span>UMANGO<span class="brand-sub">GAMES BY URI KATZ</span></span></a>
-    <nav aria-label="Main navigation"><a href="#work">Games <span>08</span></a><a href="#art">3D art <span>12</span></a><a class="contact-link" href="mailto:urikatzemail@gmail.com">Let’s talk <span>↗</span></a></nav>
+    <nav aria-label="Main navigation"><a href="#company">Games <span>11</span></a><a href="#art">3D art <span>12</span></a><a class="contact-link" href="mailto:urikatzemail@gmail.com">Let’s talk <span>↗</span></a></nav>
   </header>
   <main>
     <section class="hero wrap" aria-labelledby="intro">
       <div class="eyebrow"><span class="short-line"></span> URI KATZ / GAME DEVELOPMENT & 3D ART</div>
-      <div class="hero-row"><h1 id="intro">Small ideas.<br><span>Playable worlds.</span></h1><div class="hero-aside"><p>Games, experiments, and<br>3D creations by Uri Katz.</p><a class="round-link" href="#work" aria-label="Explore the games">↓</a></div></div>
+      <div class="hero-row"><h1 id="intro">Small ideas.<br><span>Playable worlds.</span></h1><div class="hero-aside"><p>Games, experiments, and<br>3D creations by Uri Katz.</p><a class="round-link" href="#company" aria-label="Explore the games">↓</a></div></div>
       <div class="hero-bottom"><span>THE UMANGO GAMES COLLECTION</span><span>UNITY · ANDROID · PC · WEBGL</span></div>
     </section>
+    <section class="company wrap" id="company" aria-labelledby="company-heading">
+      <div class="section-heading"><div><p class="overline">PROFESSIONAL WORK / LOOTHEADS</p><h2 id="company-heading">Company games<span> / 03</span></h2></div><p class="company-intro">Team-built games.<br>My work behind the scenes.</p></div>
+      <article class="company-project">
+        <div class="company-copy"><p class="overline">01 / REAL-TIME MULTIPLAYER PUZZLE</p><div class="company-title"><img src="CV/images/blockyblock.png" alt="BlockyBlock app icon" loading="lazy"><h3>BlockyBlock</h3></div><p class="company-platform">iOS & Android</p><p>I architected the Unity 6 client and authoritative Go/Nakama server, built on the shared LoopheadsCore platform.</p><ul><li>Created a deterministic rules engine shared by client and server, with Protobuf/gRPC contracts and golden test vectors to keep gameplay consistent.</li><li>Built ClickHouse analytics and Grafana dashboards, with crash reporting, attribution, and monetization integrations.</li><li>Owned automated Go and Unity tests, CI/CD, store releases, and Addressables content delivery.</li></ul><div class="company-tech">Unity 6 · C# · Go · Nakama · PostgreSQL · Redis · Docker</div></div>
+        <div class="company-media phone-pair"><img src="CV/images/blockyblock-1.png" alt="BlockyBlock planning phase with colorful puzzle pieces" loading="lazy"><img src="CV/images/blockyblock-2.png" alt="Additional BlockyBlock gameplay screenshot" loading="lazy"></div>
+      </article>
+      <article class="company-project sort-project">
+        <div class="company-copy"><p class="overline">02 / SORT PUZZLE</p><h3>SortBlastWorlds</h3><p class="company-platform">iOS & Android</p><p>I shipped a second title on the same LoopheadsCore and Nakama/Go stack, putting the shared platform to work across multiple games.</p><p>Reused the Unity packages, server infrastructure, ClickHouse/Grafana analytics, and attribution integrations with AppsFlyer, Singular, Adjust, and Amplitude.</p><div class="company-tech">Unity · LoopheadsCore · Nakama · Go · ClickHouse · Grafana</div></div>
+        <div class="company-media sort-art"><img src="CV/images/sortblastworlds.png" alt="SortBlastWorlds app artwork" loading="lazy"></div>
+      </article>
+      <article class="company-project">
+        <div class="company-copy"><p class="overline">03 / MULTIPLAYER</p><h3>Trailblazers</h3><p class="company-platform">iOS & Android</p><p>I developed tools and integrations for this multiplayer Unity game.</p><ul><li>Created a Roslyn incremental source generator and analyzer toolkit that connects game events using attributes, replacing repetitive code and catching wiring errors at compile time.</li><li>Integrated PlayFab for player accounts and live operations, and Singular for attribution.</li></ul><div class="company-tech">Unity · C# · Roslyn · PlayFab · Singular</div></div>
+        <div class="company-media phone-pair trail-media"><img src="CV/images/trailblazers-1.webp" alt="Trailblazers colorful multiplayer arena gameplay" loading="lazy"><img src="CV/images/trailblazers-2.webp" alt="Additional Trailblazers gameplay screenshot" loading="lazy"></div>
+      </article>
+      <div class="platform-work"><article><p class="overline">THE SHARED FOUNDATION</p><h3>LoopheadsCore</h3><p>Designed a suite of <strong>17 Unity UPM packages</strong> shared across Lootheads games: networking, authentication, in-app purchases, ads, push notifications, deep links, analytics, and editor tools.</p><p>A headless validation project gates package releases with compilation checks and EditMode tests, so a feature can ship once and reach every game.</p></article><article><p class="overline">BEHIND THE CLIENT</p><h3>Serverless game backend</h3><p>Built .NET isolated Azure Functions APIs with Cosmos DB, EF Core, Redis caching, and Azure AD B2C, including Google Play and App Store receipt validation.</p><p>Added end-to-end observability with OpenTelemetry and Application Insights.</p></article></div>
+    </section>
     <section class="wrap work" id="work" aria-labelledby="games-heading">
-      <div class="section-heading"><h2 id="games-heading">Selected games<span> / 08</span></h2><span class="section-note">BUILT TO BE PLAYED</span></div>
+      <div class="section-heading"><h2 id="games-heading">Personal games<span> / 08</span></h2><span class="section-note">THE UMANGO COLLECTION</span></div>
       <article class="featured">
         <div class="featured-image"><img src="assets/flocking.png" alt="A school of colorful fish in the Flocking Simulation" fetchpriority="high"><span class="image-label">01 / FLOCKING SIMULATION</span></div>
         <div class="featured-copy"><div class="tags"><span>PC</span><span>UNITY ECS</span></div><p class="overline">SIMULATION / EXPERIMENT</p><h3>One world.<br>12,000 fish.</h3><p>A flocking simulation built with Unity ECS, bringing 12,000 fish together in motion.</p><a class="button" href="https://drive.google.com/file/d/1v2PTeU6l6TmYa8oVXgJqZsUQAG6GCW5O/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download for PC <span>↗</span></a><span class="project-title">Flocking Simulation</span></div>

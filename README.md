@@ -25,3 +25,7 @@ All site asset paths are relative, so both username.github.io and username.githu
 Project/store links are retained from the original site; availability is controlled by those providers. Google Fonts are optional and fall back to local fonts. The original Wix chat widget is replaced by the existing email contact link; there is no backend or contact form.
 
 Original artwork and games belong to their respective owner. Gallery labels describe the pictured subjects; the original gallery had no visible titles. `assets.json` records original Wix image identifiers for provenance.
+
+## Company projects
+
+`dist/CV/` contains the original `CV-Projects.md` and all six images copied from the supplied CV-Projects ZIP. The Company games section summarizes those project contributions and uses the local images. No store URLs were supplied, so the company projects do not invent store links.
