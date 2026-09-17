@@ -56,3 +56,6 @@
 .store-link{display:inline-block;margin-top:18px;color:var(--accent);font-size:14px;border-bottom:1px solid #6b735f;padding-bottom:5px}.store-link:hover{border-color:var(--accent)}
 .animal-project .sort-art img{width:min(100%,280px);height:auto;aspect-ratio:1;object-fit:contain;border-radius:22px}
 .animals-media{background:#152b4c;padding:18px;gap:14px}.animals-media img{width:calc(50% - 7px);height:auto;object-fit:contain;border-radius:10px}
+.game-video{grid-column:1/-1;margin:0;border-top:1px solid var(--line);padding-top:24px}
+.game-video figcaption{font:500 18px/1.5 var(--display);margin-bottom:16px}
+.game-video video{display:block;width:100%;height:min(65vh,520px);object-fit:contain;background:#090b0a;border-radius:8px}
