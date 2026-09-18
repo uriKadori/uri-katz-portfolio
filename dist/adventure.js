@@ -51,6 +51,30 @@ function select(index) {
 }
 $('up').addEventListener('click', () => select(selected + 1));
 $('down').addEventListener('click', () => select(selected - 1));
+// Vertical swipes on the world move one island; links and controls keep their taps.
+let swipe = null;
+const playArea = document.querySelector('main');
+playArea.addEventListener('pointerdown', event => {
+  if (event.pointerType !== 'touch') return;
+  if (!event.isPrimary) { swipe = null; return; }
+  if (event.target.closest('a, button, .trail, .coin-quest')) return;
+  swipe = { id: event.pointerId, x: event.clientX, y: event.clientY };
+});
+playArea.addEventListener('pointerup', event => {
+  if (!swipe || swipe.id !== event.pointerId) return;
+  const dx = event.clientX - swipe.x, dy = event.clientY - swipe.y;
+  swipe = null;
+  if (Math.abs(dy) >= 40 && Math.abs(dy) > Math.abs(dx) * 1.4) select(selected + (dy < 0 ? 1 : -1));
+});
+playArea.addEventListener('pointercancel', () => { swipe = null; });
+const touchControls = matchMedia('(pointer: coarse)');
+const narrowScreen = matchMedia('(max-width:700px)');
+function updateControlHint() {
+  document.querySelector('.controls small').textContent = touchControls.matches || narrowScreen.matches ? 'Swipe up / down or tap arrows' : '↑ ↓ · W / S · scroll to climb';
+}
+touchControls.addEventListener('change', updateControlHint);
+narrowScreen.addEventListener('change', updateControlHint);
+updateControlHint();
 let lastKey = 0;
 let wheelTotal = 0;
 let wheelLock = false;
@@ -92,7 +116,7 @@ try {
 function startWorld(T, CSS3DRenderer, CSS3DObject) {
   const host = $('world');
   const renderer = new T.WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
+  renderer.setPixelRatio(Math.min(devicePixelRatio, touchControls.matches ? 1.35 : 1.75));
   renderer.outputColorSpace = T.SRGBColorSpace;
   renderer.toneMapping = T.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.2;
@@ -177,7 +201,7 @@ function startWorld(T, CSS3DRenderer, CSS3DObject) {
   let currentY=0, lastTime=0;
   moveScene=index=>foxMotion.setTarget(index*step);
   moveScene(selected);
-  function resize(){const w=host.clientWidth,h=host.clientHeight;const span=innerWidth<700?9.8:13;camera.left=-span*w/h/2;camera.right=span*w/h/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();renderer.setSize(w,h,false);foxRenderer.setSize(w,h,false);boardRenderer.setSize(w,h);}
+  function resize(){const w=host.clientWidth,h=Math.max(1,host.clientHeight);const compact=matchMedia('(max-width:700px), (max-height:500px) and (pointer:coarse)').matches;const span=compact?Math.max(7.8,7.4*h/w):13;camera.left=-span*w/h/2;camera.right=span*w/h/2;camera.top=span/2;camera.bottom=-span/2;camera.updateProjectionMatrix();renderer.setSize(w,h,false);foxRenderer.setSize(w,h,false);boardRenderer.setSize(w,h);}
   new ResizeObserver(resize).observe(host);resize();
   function frame(time){
     const dt=Math.min((time-lastTime)/1000,.05);lastTime=time;
@@ -191,7 +215,7 @@ function startWorld(T, CSS3DRenderer, CSS3DObject) {
       fill.position.set(8,currentY+5,-8);
       const mobile=innerWidth<700;
       const lookY=currentY+2;
-      const centerX=mobile ? (selected%2===0?-1.2:1.2) : 0;
+      const centerX=mobile ? -1.2*Math.cos(currentY/step*Math.PI) : 0;
       camera.position.set(9+centerX,lookY+7,13);camera.lookAt(centerX,lookY,0);
       if(mobile)camera.setViewOffset(host.clientWidth,host.clientHeight,0,0,host.clientWidth,host.clientHeight);else camera.clearViewOffset();
       islands.forEach((island,i)=>{island.visible=Math.abs(i*step-currentY)<13;});
