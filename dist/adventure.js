@@ -21,7 +21,7 @@ const cards = games.map((game, i) => {
   const description = document.createElement('p'); description.className = 'board-description';
   description.textContent = game.description.split(/(?<=\.)\s/)[0];
   const links = document.createElement('div'); links.className = 'board-links';
-  game.links.forEach(([label, url]) => {
+  (game.links || []).forEach(([label, url]) => {
     const a = document.createElement('a'); a.textContent = `${label} ↗`; a.href = url; a.target = '_blank'; a.rel = 'noopener noreferrer'; links.append(a);
   });
   copy.append(platform, title, description, links); card.append(top, image, copy);

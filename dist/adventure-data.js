@@ -5,12 +5,6 @@ export const games = [
     "platform": "ANDROID",
     "image": "assets/pingpong.png",
     "description": "A multiplayer ping pong game for Android, built using UNet and HLAPI.",
-    "links": [
-      [
-        "Download APK",
-        "https://drive.google.com/open?id=1II6Zpuk2ZfrcHj13V68rOhwHLsArkmrJ"
-      ]
-    ],
     "category": "PERSONAL GAME"
   },
   {
@@ -18,12 +12,6 @@ export const games = [
     "platform": "ANDROID",
     "image": "assets/knight.jpg",
     "description": "Battle giant monsters and collect diamonds as a knight. Built with Unity Ads integration.",
-    "links": [
-      [
-        "Google Play",
-        "https://play.google.com/store/apps/details?id=com.UMangoGames.Knight"
-      ]
-    ],
     "category": "PERSONAL GAME"
   },
   {
@@ -31,16 +19,6 @@ export const games = [
     "platform": "ANDROID / WEBGL",
     "image": "assets/babies.png",
     "description": "Guide a two-person firefighting team to catch babies escaping a burning building and bounce them safely into an ambulance.",
-    "links": [
-      [
-        "Play in browser",
-        "https://simmer.io/@UriKatz/bouncing-babies"
-      ],
-      [
-        "Download APK",
-        "https://drive.google.com/file/d/1t-R5iyqOfjdiioeRbQX_clnM60J4RIWC/view?usp=sharing"
-      ]
-    ],
     "category": "PERSONAL GAME"
   },
   {
@@ -48,12 +26,6 @@ export const games = [
     "platform": "ANDROID",
     "image": "assets/foxfox.jpg",
     "description": "Collect cherries and diamonds, avoid enemies, and chase a high score. Features Google Play leaderboards and achievements.",
-    "links": [
-      [
-        "Google Play",
-        "https://play.google.com/store/apps/details?id=com.UMangoGames.FoxFox"
-      ]
-    ],
     "category": "PERSONAL GAME"
   },
   {
@@ -61,12 +33,6 @@ export const games = [
     "platform": "WINDOWS",
     "image": "assets/village.jpg",
     "description": "A 3D action role-playing game.",
-    "links": [
-      [
-        "Download for Windows",
-        "https://drive.google.com/file/d/1BpZJZmhI_1CZYpSwXCHlP8g4F3UwacyJ/view?usp=sharing"
-      ]
-    ],
     "category": "PERSONAL GAME"
   },
   {
@@ -74,12 +40,6 @@ export const games = [
     "platform": "ANDROID",
     "image": "assets/space.png",
     "description": "Fire lasers and missiles at spaceships and planets all around you in augmented reality.",
-    "links": [
-      [
-        "Download APK",
-        "https://drive.google.com/open?id=1qYa-cn10iKSALZ82jSWiPa-n61RrPZBZ"
-      ]
-    ],
     "category": "PERSONAL GAME"
   },
   {
@@ -87,16 +47,6 @@ export const games = [
     "platform": "ANDROID / WEBGL",
     "image": "assets/helix.jpg",
     "description": "My take on Helix Jump. Play in your browser or download the Android version.",
-    "links": [
-      [
-        "Play in browser",
-        "https://simmer.io/@UriKatz/helixjump"
-      ],
-      [
-        "Download APK",
-        "https://drive.google.com/file/d/1dmj0knLUICKdGBRSvc4o52jV3TPIow0x/view?usp=sharing"
-      ]
-    ],
     "category": "PERSONAL GAME"
   },
   {
