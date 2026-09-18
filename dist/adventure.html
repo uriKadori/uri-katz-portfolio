@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e9e9db">
+  <meta name="description" content="A little fox. A ladder of worlds. Explore Uri Katz’s games in an interactive 3D portfolio.">
+  <title>The Little Climb — Uri Katz</title>
+  <link rel="stylesheet" href="adventure.css">
+  <script type="module" src="adventure.js"></script>
+</head>
+<body>
+  <header><a class="wordmark" href="index.html">URI KATZ<span>GAMES & LITTLE WORLDS</span></a><a class="back" href="index.html">Classic portfolio ↗</a></header>
+  <main>
+    <section class="intro"><p class="eyebrow">AN INTERACTIVE COLLECTION</p><h1>The little<br><em>climb.</em></h1><p>Every game is a world.<br>One curious fox connects them all.</p><div class="intro-line"></div><span class="field-note">Made of code, curiosity<br>& a little imagination.</span></section>
+    <div id="world" role="img" aria-label="An orthographic woodland world. An orange fox climbs a ladder between floating game islands."></div>
+    <p id="scene-status" role="status">Growing a little world…</p>
+    <div id="island-cards" aria-label="Island game boards"></div>
+    <p id="current-game" class="sr-only" aria-live="polite"></p>
+    <nav class="trail" aria-label="Choose a game"><span class="eyebrow">THE TRAIL</span><div id="stops"></div></nav>
+    <div class="controls"><button id="down" aria-label="Climb down to the previous game">↓</button><div><span id="progress">01 / 11</span><small>↑ ↓ or W / S to climb</small></div><button id="up" aria-label="Climb up to the next game">↑</button></div>
+    <span class="world-label"><span id="environment-name">CONSTELLATION SKY</span> / <span id="altitude">00</span> M</span>
+  </main>
+  <footer><span>A SMALL ADVENTURE BY URI KATZ</span><span>TAKE YOUR TIME. ENJOY THE CLIMB.</span></footer>
+  <noscript><p class="no-script">Enable JavaScript to explore, or <a href="index.html">visit the classic portfolio</a>.</p></noscript>
+</body>
+</html>
