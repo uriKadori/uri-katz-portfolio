@@ -66,3 +66,9 @@
 @media(max-width:1000px){.company-project{grid-template-columns:1fr}.company-project .company-media{justify-content:stretch}}
 @media(max-width:650px){.company-project .company-media{grid-template-columns:repeat(3,minmax(145px,1fr));overflow-x:auto;justify-content:start;padding:12px;gap:12px}.game-video video{max-height:330px}}
 .career-highlights{margin:12px 0 0;padding-left:20px;color:var(--muted);font-size:15px;line-height:1.65}.career-highlights li+li{margin-top:9px}.career-highlights strong{color:var(--text);font-weight:600}
+.contact-address{font-size:clamp(17px,3vw,24px);margin:18px 0;overflow-wrap:anywhere;user-select:all}
+.contact-options{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.contact-options a{min-height:48px;display:inline-flex;align-items:center;padding:11px 18px;border-radius:6px}
+.email-app{border:1px solid var(--line)}.email-app:hover{border-color:var(--accent);color:var(--accent)}
+.contact-help{color:var(--muted);font-size:13px;margin:16px 0 0}
+@media(max-width:650px){.header{flex-wrap:wrap;gap:14px}.header nav{width:100%;flex-wrap:wrap;gap:6px 14px}.header nav a{display:inline-flex;align-items:center;min-height:44px}.header nav .contact-link{display:inline-flex;padding:6px 12px;border-color:var(--accent);color:var(--accent)}}
