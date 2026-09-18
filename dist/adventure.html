@@ -16,8 +16,15 @@
     <p id="scene-status" role="status">Growing a little world…</p>
     <div id="island-cards" aria-label="Island game boards"></div>
     <p id="current-game" class="sr-only" aria-live="polite"></p>
+    <aside class="coin-quest" id="coin-quest" hidden aria-label="Coin collection challenge">
+      <span class="quest-label">THE GOLDEN TRAIL</span>
+      <div class="coin-score"><span class="coin-icon" aria-hidden="true">✦</span><strong id="coin-count">0</strong><span id="coin-total">/ 30</span></div>
+      <div class="coin-meter" aria-hidden="true"><span id="coin-fill"></span></div>
+      <p id="coin-message" role="status">Collect every coin on your way up.</p>
+      <button id="coin-replay" type="button" hidden>Climb again ↻</button>
+    </aside>
     <nav class="trail" aria-label="Choose a game"><span class="eyebrow">THE TRAIL</span><div id="stops"></div></nav>
-    <div class="controls"><button id="down" aria-label="Climb down to the previous game">↓</button><div><span id="progress">01 / 11</span><small>↑ ↓ or W / S to climb</small></div><button id="up" aria-label="Climb up to the next game">↑</button></div>
+    <div class="controls"><button id="down" aria-label="Climb down to the previous game">↓</button><div><span id="progress">01 / 11</span><small>↑ ↓ · W / S · scroll to climb</small></div><button id="up" aria-label="Climb up to the next game">↑</button></div>
     <span class="world-label"><span id="environment-name">CONSTELLATION SKY</span> / <span id="altitude">00</span> M</span>
   </main>
   <footer><span>A SMALL ADVENTURE BY URI KATZ</span><span>TAKE YOUR TIME. ENJOY THE CLIMB.</span></footer>

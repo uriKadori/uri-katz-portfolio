@@ -2,6 +2,7 @@ import { createFoxMotion } from './fox-motion.js';
 import { createAssets } from './world-assets.js';
 import { games } from './adventure-data.js';
 import { createEnvironment } from './environments.js';
+import { createCoinTrail } from './coin-trail.js';
 
 const $ = id => document.getElementById(id);
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -148,6 +149,12 @@ function startWorld(T, CSS3DRenderer, CSS3DObject) {
   }
   const foxRig = assets.fox(scene);
   const foxMotion = createFoxMotion(T, foxRig, reduced);
+  const coinTrail = createCoinTrail(T, scene, games.length, step, reduced);
+  $('coin-replay').addEventListener('click', () => {
+    coinTrail.restart();
+    select(0);
+    $('up').focus();
+  });
   // CSS3D boards and WebGL do not share a depth buffer. Composite the fox
   // above the boards using the same camera, while retaining its ground shadow.
   foxRig.root.traverse(object => object.layers.enable(1));
@@ -177,6 +184,7 @@ function startWorld(T, CSS3DRenderer, CSS3DObject) {
     if(!document.hidden){
       const pose=foxMotion.update(dt,time);
       currentY=pose.height;
+      coinTrail.update(currentY, dt, time);
       const moving=pose.moving;
       sun.intensity=environment.draw(currentY/step,time);
       sun.position.set(-6,currentY+11,9);sun.target.position.set(0,currentY,0);
